@@ -11,7 +11,10 @@ function rot13(str) { // LBH QVQ VG!
   for (i = 0; i < rotarr.length; i++){
     for (j = 0; j < rotarr[i].length; j++) {
       temp = rotarr[i].charCodeAt(j);
-      if (temp >= 78) {
+      if (temp == 33 || temp == 63 || temp == 46){
+        temp = temp;
+      }
+      else if (temp >= 78) {
         temp = temp - 13;  
       }
       else temp = temp + 13;
